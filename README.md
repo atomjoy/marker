@@ -26,8 +26,18 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 			// Google map
 			function initMap() {
 				const map = new google.maps.Map(document.getElementById('map'), {
-					center: { lat: -33.9, lng: 151.2 },
+					center: { lat: -33.950198, lng: 151.259302 },
 					zoom: 11,
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					disableDefaultUI: true,
+					// Map controls
+					panControl: true,
+					zoomControl: true,
+					mapTypeControl: true,
+					scaleControl: true,
+					streetViewControl: true,
+					overviewMapControl: true,
+					rotateControl: true,
 				})
 
 				setMarkers(map)
@@ -55,7 +65,7 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 					// The origin for this image is (0, 0).
 					origin: new google.maps.Point(0, 0),
 					// The anchor for this image is the base of the flagpole at (0, 32).
-					anchor: new google.maps.Point(40, 80), // move to center and to bottom 
+					anchor: new google.maps.Point(40, 80),
 				}
 				// Shapes define the clickable region of the icon. The type defines an HTML
 				// <area> element 'poly' which traces out a polygon as a series of X,Y points.
