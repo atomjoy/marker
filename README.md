@@ -5,28 +5,25 @@ Google map marker images.
 
 ```sh
 https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
-https://raw.githubusercontent.com/atomjoy/marker/main/google-marker-big.png
-https://raw.githubusercontent.com/atomjoy/marker/main/google-marker-3d.png
 ```
 
 ## Sample map
 
-<https://developers.google.com/maps/documentation/javascript/examples/marker-simple>
+- <https://developers.google.com/maps/documentation/javascript/examples/marker-simple>
+- <https://developers.google.com/maps/documentation/javascript/markers?hl=pl>
 
 ```html
 <html>
 	<head>
 		<title>Simple Map</title>
-
 		<!-- Old google map -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
 
-		<!--
-			<link rel="stylesheet" type="text/css" href="./style.css" />
-			<script type="module" src="./index.js"></script>
-		-->
+		<!-- <link rel="stylesheet" type="text/css" href="./style.css" />
+		<script type="module" src="./index.js"></script> -->
 
-		<script>			
+		<script>
+			// Google map
 			function initMap() {
 				const map = new google.maps.Map(document.getElementById('map'), {
 					center: { lat: -33.9, lng: 151.2 },
@@ -51,12 +48,14 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker-3d.png
 				const image = {
 					// url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
 					url: 'https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png',
-					// This marker is 20 pixels wide by 32 pixels high.
-					size: new google.maps.Size(20, 32),
+					// This marker image is 256 pixels wide by 256 pixels high.
+					size: new google.maps.Size(256, 256),
+					// Scaled size will be 100px x 100px
+					scaledSize: new google.maps.Size(80, 80),
 					// The origin for this image is (0, 0).
 					origin: new google.maps.Point(0, 0),
 					// The anchor for this image is the base of the flagpole at (0, 32).
-					anchor: new google.maps.Point(0, 32),
+					anchor: new google.maps.Point(40, 40),
 				}
 				// Shapes define the clickable region of the icon. The type defines an HTML
 				// <area> element 'poly' which traces out a polygon as a series of X,Y points.
@@ -69,6 +68,7 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker-3d.png
 				for (let i = 0; i < beaches.length; i++) {
 					const beach = beaches[i]
 
+					// Add marker
 					new google.maps.Marker({
 						position: { lat: beach[1], lng: beach[2] },
 						map,
@@ -77,6 +77,9 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker-3d.png
 						title: beach[0],
 						zIndex: beach[3],
 					})
+
+					// Remove marker example
+					// marker.setMap(null);
 				}
 			}
 
@@ -96,7 +99,7 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker-3d.png
 		</style>
 	</head>
 	<body>
-		<div id="map"></div>		
+		<div id="map"></div>
 	</body>
 </html>
 ```
