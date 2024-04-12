@@ -11,6 +11,7 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 
 - <https://developers.google.com/maps/documentation/javascript/examples/marker-simple>
 - <https://developers.google.com/maps/documentation/javascript/markers?hl=pl>
+- <https://spatialized.io/advanced-google-maps-markers-definitive-guide-94c5a070615e436ab0a255b9f5100a88>
 
 ```html
 <html>
