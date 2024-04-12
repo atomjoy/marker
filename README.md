@@ -1,5 +1,5 @@
-# Map marker images
-Google map marker images.
+# Znaczniki | Markers Google Maps JavaScript API
+Jak ustawić znacznik w Google Maps? Mapa Google z własnym znacznikiem z ikoną z pliku .png oraz wyskakującym okienkiem w html. Prosta mapa google.
 
 ## Url
 
