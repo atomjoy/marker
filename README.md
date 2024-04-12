@@ -22,9 +22,9 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker-3d.png
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
 
 		<!--
-      <link rel="stylesheet" type="text/css" href="./style.css" />
-  		<script type="module" src="./index.js"></script>
-    -->
+			<link rel="stylesheet" type="text/css" href="./style.css" />
+			<script type="module" src="./index.js"></script>
+		-->
 
 		<script>			
 			function initMap() {
