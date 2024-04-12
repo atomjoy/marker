@@ -1,13 +1,20 @@
 # Znaczniki | Markers Google Maps JavaScript API
 Jak ustawić znacznik w Google Maps? Mapa Google z własnym znacznikiem z ikoną z pliku .png oraz wyskakującym okienkiem w html. Prosta mapa google.
 
-## Url
+## Przykłady
 
 ```sh
+# Style
+google-map-marker-styles.html
+
+# Kilka znaczników
+google-map-marker.html
+
+# Marker image
 https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 ```
 
-## Sample map
+## Kod mapy
 
 - <https://developers.google.com/maps/documentation/javascript/examples/marker-simple>
 - <https://developers.google.com/maps/documentation/javascript/markers?hl=pl>
@@ -142,7 +149,7 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 </html>
 ```
 
-## Printscreen
+## Zdjęcia
 
 <img src="https://raw.githubusercontent.com/atomjoy/marker/main/mapa.png" width="100%">
 <img src="https://raw.githubusercontent.com/atomjoy/marker/main/mapa-google.png" width="100%">
