@@ -24,10 +24,12 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 		<script type="module" src="./index.js"></script> -->
 
 		<script>
+			// Map
+			let map = null
 			// Google map
 			function initMap() {
-				const map = new google.maps.Map(document.getElementById('map'), {
-					center: { lat: -33.950198, lng: 151.259302 },
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: { lat: -33.95, lng: 151.256944 },
 					zoom: 11,
 					mapTypeId: google.maps.MapTypeId.ROADMAP,
 					disableDefaultUI: true,
@@ -44,6 +46,26 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 				setMarkers(map)
 			}
 
+			function infoWindow(marker) {
+				const contentString = '<div id="content" style="display: inline-block;">My Text comes here</div>'
+
+				const infowindow = new google.maps.InfoWindow({
+					content: contentString,
+					ariaLabel: 'Info Label Here',
+					maxWidth: 400,
+					// anchor: marker, // Show infowindow on load
+				})
+
+				marker.addListener('click', () => {
+					infowindow.setPosition(new google.maps.LatLng(marker.position.lat(), marker.position.lng()))
+					console.log('Marker click', marker.position.lat(), marker.position.lng(), infowindow.position.lng())
+					infowindow.open({
+						anchor: marker,
+						map,
+					})
+				})
+			}
+
 			// Data for the markers consisting of a name, a LatLng and a zIndex for the
 			// order in which these markers should display on top of each other.
 			const beaches = [
@@ -54,7 +76,7 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 				['Maroubra Beach', -33.95, 151.256944, 1],
 			]
 
-			function setMarkers(map) {
+			function setMarkers(map, cb = null) {
 				// Adds markers to the map.
 				const image = {
 					// url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
@@ -62,11 +84,11 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 					// This marker image is 256 pixels wide by 256 pixels high.
 					size: new google.maps.Size(256, 256),
 					// Scaled size will be 100px x 100px
-					scaledSize: new google.maps.Size(80, 80),
+					scaledSize: new google.maps.Size(40, 40),
 					// The origin for this image is (0, 0).
 					origin: new google.maps.Point(0, 0),
 					// The anchor for this image is the base of the flagpole at (0, 32).
-					anchor: new google.maps.Point(40, 80),
+					anchor: new google.maps.Point(20, 20),
 				}
 				// Shapes define the clickable region of the icon. The type defines an HTML
 				// <area> element 'poly' which traces out a polygon as a series of X,Y points.
@@ -80,7 +102,7 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 					const beach = beaches[i]
 
 					// Add marker
-					new google.maps.Marker({
+					let marker = new google.maps.Marker({
 						position: { lat: beach[1], lng: beach[2] },
 						map,
 						icon: image,
@@ -88,6 +110,8 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 						title: beach[0],
 						zIndex: beach[3],
 					})
+
+					infoWindow(marker)
 
 					// Remove marker example
 					// marker.setMap(null);
@@ -106,6 +130,9 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 				height: 100%;
 				margin: 0;
 				padding: 0;
+			}
+			.gm-style-iw-t {
+				right: 0px !important;
 			}
 		</style>
 	</head>
