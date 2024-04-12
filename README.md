@@ -145,3 +145,4 @@ https://raw.githubusercontent.com/atomjoy/marker/main/google-marker.png
 ## Printscreen
 
 <img src="https://raw.githubusercontent.com/atomjoy/marker/main/mapa.png" width="100%">
+<img src="https://raw.githubusercontent.com/atomjoy/marker/main/mapa-google.png" width="100%">
