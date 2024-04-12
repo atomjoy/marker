@@ -32,11 +32,11 @@
 			}
 
 			function infoWindow(marker) {
-				const contentString = '<div id="content" style="display: inline-block;">My Text comes here</div>'
+				const contentString = '<div id="content" style="display: inline-block;">' + marker.title + '</div>'
 
 				const infowindow = new google.maps.InfoWindow({
 					content: contentString,
-					ariaLabel: 'Info Label Here',
+					ariaLabel: marker.title,
 					maxWidth: 400,
 					// anchor: marker, // Show infowindow on load
 				})
@@ -56,8 +56,8 @@
 			const beaches = [
 				// ['Bondi Beach', -33.890542, 151.274856, 4],
 				// ['Coogee Beach', -33.923036, 151.259052, 5],
-				// ['Cronulla Beach', -34.028249, 151.157507, 3],
-				// ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+				['Cronulla Beach', -34.028249, 151.157507, 3],
+				['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
 				['Maroubra Beach', -33.95, 151.256944, 1],
 			]
 
