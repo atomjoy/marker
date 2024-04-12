@@ -31,11 +31,11 @@
 			}
 
 			function infoWindow(marker) {
-				const contentString = '<div id="content" style="display: inline-block;">My Text comes here</div>'
+				const contentString = '<div id="content" style="display: inline-block;">' + marker.title + '</div>'
 
 				const infowindow = new google.maps.InfoWindow({
 					content: contentString,
-					ariaLabel: 'Info Label Here',
+					ariaLabel: marker.title,
 					maxWidth: 400,
 					// anchor: marker, // Show infowindow on load
 				})
